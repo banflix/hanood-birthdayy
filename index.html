@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hanood's Birthday World Cup ⚽</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  color: white;
+  background: linear-gradient(135deg, #06183a, #0755a5, #8ed8ff);
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .15;
+  background-image:
+    radial-gradient(circle at 20% 20%, white 0 2px, transparent 3px),
+    radial-gradient(circle at 80% 70%, white 0 2px, transparent 3px);
+  background-size: 90px 90px, 120px 120px;
+}
+
+.container {
+  width: min(900px, 94%);
+  margin: auto;
+  padding: 30px 0 60px;
+}
+
+.card {
+  background: rgba(3, 16, 43, .88);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+h1 {
+  text-align: center;
+  font-size: clamp(42px, 9vw, 75px);
+  margin: 10px 0;
+}
+
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.badge {
+  width: fit-content;
+  margin: auto;
+  background: white;
+  color: #06418e;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 900;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  border: none;
+  border-radius: 16px;
+  padding: 14px 20px;
+  margin: 6px;
+  font-size: 17px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #063d86;
+  background: white;
+  box-shadow: 0 7px 0 rgba(0,0,0,.25);
+  transition: .15s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+button:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 rgba(0,0,0,.25);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,.1);
+  padding: 15px 18px;
+  border-radius: 18px;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+/* PENALTY */
+
+.pitch {
+  position: relative;
+  height: 330px;
+  border: 4px solid white;
+  border-radius: 22px;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    90deg,
+    #168b4e 0 55px,
+    #1c9756 55px 110px
+  );
+}
+
+.goal {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 230px;
+  height: 110px;
+  border: 6px solid white;
+  border-bottom: 0;
+}
+
+.keeper {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 60px;
+  transition: .3s;
+}
+
+.ball {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 45px;
+  transition: .5s;
+}
+
+.targets {
+  position: absolute;
+  top: 42px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.target {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* DRIBBLE */
+
+.meter {
+  height: 20px;
+  background: rgba(255,255,255,.2);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.meter span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #ffd83d;
+  transition: .3s;
+}
+
+/* QUIZ */
+
+.quiz-question {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+  margin: 25px 0;
+}
+
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.answer {
+  min-width: 180px;
+}
+
+/* FINAL */
+
+.trophy {
+  text-align: center;
+  font-size: 110px;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+.message {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 900;
+  min-height: 32px;
+}
+
+.confetti {
+  position: fixed;
+  font-size: 30px;
+  pointer-events: none;
+  animation: fly 1.3s forwards;
+  z-index: 100;
+}
+
+@keyframes fly {
+  from {
+    transform: translateY(0) scale(.5) rotate(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-220px) scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.small {
+  font-size: 14px;
+  opacity: .7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HOME -->
+
+<section id="home" class="card">
+
+  <div class="badge">🏆 BIRTHDAY WORLD CUP 🏆</div>
+
+  <h1>HANOOD ⚽</h1>
+
+  <p style="font-size:24px;">
+    🎂 HAPPY BIRTHDAY! 🎂
+  </p>
+
+  <p>
+    Welcome to your very own Birthday World Cup 😎
+  </p>
+
+  <p>
+    Complete the football challenges.<br>
+    Win the trophy. 🏆
+  </p>
+
+  <div class="center">
+    <button onclick="startGame()">
+      START TOURNAMENT 🚀
+    </button>
+  </div>
+
+  <p class="small">
+    Warning: Only football legends allowed 😤⚽
+  </p>
+
+</section>
+
+
+<!-- GAME -->
+
+<section id="game" class="card hidden">
+
+  <div class="score">
+    <span>HANOOD 🐐</span>
+    <span>⭐ <span id="points">0</span> / 3</span>
+  </div>
+
+
+  <!-- PENALTY -->
+
+  <div id="penalty">
+
+    <h2>🥅 PENALTY SHOOTOUT</h2>
+
+    <p>
+      Pick a corner and beat the keeper!
+    </p>
+
+    <div class="pitch">
+
+      <div class="goal"></div>
+
+      <div class="keeper" id="keeper">
+        🧤
+      </div>
+
+      <div class="ball" id="ball">
+        ⚽
+      </div>
+
+      <div class="targets">
+
+        <span
+          class="target"
+          onclick="shoot('left')">
+          🎯
+        </span>
+
+        <span
+          class="target"
+          onclick="shoot('middle')">
+          🎯
+        </span>
+
+        <span
+          class="target"
+          onclick="shoot('right')">
+          🎯
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="message" id="penaltyMessage">
+      Choose your shot 👇
+    </div>
+
+    <div class="center">
+
+      <button onclick="nextChallenge()">
+        NEXT CHALLENGE ➜
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- DRIBBLE -->
+
+  <div id="dribble" class="hidden">
+
+    <h2>⚡ DRIBBLE CHALLENGE</h2>
+
+    <p>
+      Beat 5 defenders to reach the goal!
+    </p>
+
+    <div class="meter">
+      <span id="dribbleBar"></span>
+    </div>
+
+    <div class="center">
+
+      <button onclick="dribble()">
+        ⚽ DRIBBLE!
+      </button>
+
+      <button onclick="resetDribble()">
+        RESET
+      </button>
+
+    </div>
+
+    <div class="message" id="dribbleMessage">
+      0 / 5 defenders beaten
+    </div>
+
+    <div style="
+      text-align:center;
+      font-size:70px;
+      margin:25px 0;
+    ">
+      🧍‍♂️ 🧍‍♂️ 🧍‍♂️ 🧍‍♂️ 🧍‍♂️
+    </div>
+
+    <div class="center">
+
+      <button onclick="nextChallenge()">
+        NEXT CHALLENGE ➜
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- QUIZ -->
+
+  <div id="quiz" class="hidden">
+
+    <h2>🧠 FOOTBALL IQ</h2>
+
+    <div
+      class="quiz-question"
+      id="question">
+    </div>
+
+    <div
+      class="answers"
+      id="answers">
+    </div>
+
+    <div
+      class="message"
+      id="quizMessage">
+    </div>
+
+    <div class="center">
+
+      <button onclick="nextQuestion()">
+        NEXT ➜
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section id="final" class="card hidden">
+
+  <div class="trophy">
+    🏆
+  </div>
+
+  <h1>
+    CHAMPION!
+  </h1>
+
+  <h2>
+    HANOOD 🐐
+  </h2>
+
+  <p>
+    YOU COMPLETED THE BIRTHDAY WORLD CUP!
+  </p>
+
+  <p id="finalMessage">
+  </p>
+
+  <div class="center">
+
+    <button onclick="celebrate()">
+      🎉 CELEBRATE
+    </button>
+
+    <button onclick="location.reload()">
+      🔄 PLAY AGAIN
+    </button>
+
+  </div>
+
+  <p style="font-size:22px;">
+    Happy Birthday Hanood ❤️⚽
+  </p>
+
+</section>
+
+</div>
+
+
+<script>
+
+let points = 0;
+let challenge = 0;
+
+let dribbleScore = 0;
+
+let questionIndex = 0;
+
+let answered = false;
+
+
+const questions = [
+
+  {
+    question:
+      "Who is famous for the 'Siuuu' celebration? 🐐",
+
+    answers: [
+      "Cristiano Ronaldo",
+      "Lionel Messi",
+      "Neymar"
+    ],
+
+    correct: 0
+  },
+
+  {
+    question:
+      "Which country does Messi play for internationally? 🇦🇷",
+
+    answers: [
+      "Argentina",
+      "Portugal",
+      "Brazil"
+    ],
+
+    correct: 0
+  },
+
+  {
+    question:
+      "What do you need to score in football? ⚽",
+
+    answers: [
+      "A goal",
+      "A basket",
+      "A touchdown"
+    ],
+
+    correct: 0
+  },
+
+  {
+    question:
+      "Which word is associated with Ronaldo's celebration? 🔥",
+
+    answers: [
+      "SIUUUU!",
+      "MOOOO!",
+      "VAMOSSS!"
+    ],
+
+    correct: 0
+  }
+
+];
+
+
+function startGame() {
+
+  document
+    .getElementById("home")
+    .classList.add("hidden");
+
+  document
+    .getElementById("game")
+    .classList.remove("hidden");
+
+}
+
+
+function updatePoints() {
+
+  document
+    .getElementById("points")
+    .textContent = points;
+
+}
+
+
+function confetti() {
+
+  const emojis = [
+    "⚽",
+    "🏆",
+    "⭐",
+    "🎉",
+    "🔥"
+  ];
+
+  for (let i = 0; i < 20; i++) {
+
+    const item =
+      document.createElement("div");
+
+    item.className = "confetti";
+
+    item.textContent =
+      emojis[
+        Math.floor(
+          Math.random() * emojis.length
+        )
+      ];
+
+    item.style.left =
+      Math.random() * 100 + "vw";
+
+    item.style.top =
+      (50 + Math.random() * 45) + "vh";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => {
+      item.remove();
+    }, 1300);
+
+  }
+
+}
+
+
+/* PENALTY */
+
+function shoot(direction) {
+
+  const keeper =
+    document.getElementById("keeper");
+
+  const ball =
+    document.getElementById("ball");
+
+  const positions = [
+    "left",
+    "middle",
+    "right"
+  ];
+
+  const keeperPosition =
+    positions[
+      Math.floor(
+        Math.random() * 3
+      )
+    ];
+
+
+  if (keeperPosition === "left") {
+    keeper.style.left = "30%";
+  }
+
+  else if (keeperPosition === "right") {
+    keeper.style.left = "70%";
+  }
+
+  else {
+    keeper.style.left = "50%";
+  }
+
+
+  if (direction === "left") {
+    ball.style.left = "30%";
+  }
+
+  else if (direction === "right") {
+    ball.style.left = "70%";
+  }
+
+  else {
+    ball.style.left = "50%";
+  }
+
+  ball.style.bottom = "175px";
+
+
+  if (direction !== keeperPosition) {
+
+    document
+      .getElementById("penaltyMessage")
+      .textContent =
+      "GOOOOOAL!!! 🔥🔥🔥 SIUUUUUU!";
+
+    points = Math.max(points, 1);
+
+    updatePoints();
+
+    confetti();
+
+  }
+
+  else {
+
+    document
+      .getElementById("penaltyMessage")
+      .textContent =
+      "SAVED 😭 The keeper got lucky!";
+
+  }
+
+}
+
+
+/* NEXT CHALLENGE */
+
+function nextChallenge() {
+
+  challenge++;
+
+  document
+    .getElementById("penalty")
+    .classList.add("hidden");
+
+  document
+    .getElementById("dribble")
+    .classList.add("hidden");
+
+  document
+    .getElementById("quiz")
+    .classList.add("hidden");
+
+
+  if (challenge === 1) {
+
+    document
+      .getElementById("dribble")
+      .classList.remove("hidden");
+
+  }
+
+  else if (challenge === 2) {
+
+    document
+      .getElementById("quiz")
+      .classList.remove("hidden");
+
+    loadQuestion();
+
+  }
+
+  else {
+
+    finishGame();
+
+  }
+
+}
+
+
+/* DRIBBLE */
+
+function dribble() {
+
+  if (dribbleScore >= 5) {
+    return;
+  }
+
+  dribbleScore++;
+
+  document
+    .getElementById("dribbleBar")
+    .style.width =
+    (dribbleScore * 20) + "%";
+
+
+  document
+    .getElementById("dribbleMessage")
+    .textContent =
+    dribbleScore +
+    " / 5 defenders beaten";
+
+
+  if (dribbleScore === 5) {
+
+    points = Math.max(points, 2);
+
+    updatePoints();
+
+    document
+      .getElementById("dribbleMessage")
+      .textContent =
+      "GOOOOOAL!!! ⚡⚽ PERFECT DRIBBLING!";
+
+    confetti();
+
+  }
+
+}
+
+
+function resetDribble() {
+
+  dribbleScore = 0;
+
+  document
+    .getElementById("dribbleBar")
+    .style.width = "0%";
+
+  document
+    .getElementById("dribbleMessage")
+    .textContent =
+    "0 / 5 defenders beaten";
+
+}
+
+
+/* QUIZ */
+
+function loadQuestion() {
+
+  answered = false;
+
+  const q =
+    questions[questionIndex];
+
+
+  document
+    .getElementById("question")
+    .textContent =
+    q.question;
+
+
+  document
+    .getElementById("quizMessage")
+    .textContent = "";
+
+
+  const answers =
+    document.getElementById("answers");
+
+  answers.innerHTML = "";
+
+
+  q.answers.forEach(
+    (answer, index) => {
+
+      const button =
+        document.createElement("button");
+
+      button.className = "answer";
+
+      button.textContent = answer;
+
+      button.onclick =
+        () => chooseAnswer(index);
+
+      answers.appendChild(button);
+
+    }
+  );
+
+}
+
+
+function chooseAnswer(index) {
+
+  if (answered) {
+    return;
+  }
+
+  answered = true;
+
+  const q =
+    questions[questionIndex];
+
+
+  if (index === q.correct) {
+
+    document
+      .getElementById("quizMessage")
+      .textContent =
+      "CORRECT! 🐐🔥 YOU KNOW BALL!";
+
+    points = 3;
+
+    updatePoints();
+
+    confetti();
+
+  }
+
+  else {
+
+    document
+      .getElementById("quizMessage")
+      .textContent =
+      "NAHHH 😭 CLOSE ONE!";
+
+  }
+
+}
+
+
+function nextQuestion() {
+
+  if (!answered) {
+
+    document
+      .getElementById("quizMessage")
+      .textContent =
+      "Pick an answer first 😭";
+
+    return;
+
+  }
+
+
+  questionIndex++;
+
+
+  if (questionIndex >= questions.length) {
+
+    finishGame();
+
+    return;
+
+  }
+
+
+  loadQuestion();
+
+}
+
+
+/* FINISH */
+
+function finishGame() {
+
+  document
+    .getElementById("game")
+    .classList.add("hidden");
+
+  document
+    .getElementById("final")
+    .classList.remove("hidden");
+
+
+  if (points >= 3) {
+
+    document
+      .getElementById("finalMessage")
+      .textContent =
+      "Absolute football legend. Ronaldo-level celebration unlocked. SIUUUUUU! 🐐🔥";
+
+  }
+
+  else {
+
+    document
+      .getElementById("finalMessage")
+      .textContent =
+      "You made it to the final, champion! Now go celebrate! 🎂⚽";
+
+  }
+
+
+  celebrate();
+
+}
+
+
+function celebrate() {
+
+  for (
+    let i = 0;
+    i < 35;
+    i++
+  ) {
+
+    setTimeout(
+      confetti,
+      i * 40
+    );
+
+  }
+
+}
+
+</script>
+
+</body>
+</html>
