@@ -1,9 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071b41">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+  name="theme-color"
+  content="#071b41"
+>
 
 <title>Hanood's Birthday World Cup ⚽</title>
 
@@ -11,7 +20,7 @@
 
 /* =========================================================
    HANOOD'S BIRTHDAY WORLD CUP
-   FINAL VERSION
+   FINAL WORKING VERSION
    ========================================================= */
 
 * {
@@ -25,7 +34,12 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   color: white;
 
   background:
@@ -39,17 +53,25 @@ body {
   overflow-x: hidden;
 }
 
-/* Football pattern */
+/* =========================================================
+   FOOTBALL BACKGROUND
+   ========================================================= */
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+
   pointer-events: none;
+
   opacity: .09;
 
   background-image:
-    radial-gradient(circle, white 2px, transparent 3px);
+    radial-gradient(
+      circle,
+      white 2px,
+      transparent 3px
+    );
 
   background-size: 55px 55px;
 }
@@ -61,13 +83,17 @@ body::before {
 .container {
   width: min(1000px, 94%);
   margin: auto;
-  padding: 25px 0 70px;
+
+  padding:
+    25px 0 70px;
 }
 
 .screen {
-  background: rgba(3, 16, 43, .92);
+  background:
+    rgba(3, 16, 43, .92);
 
-  border: 1px solid rgba(255,255,255,.18);
+  border:
+    1px solid rgba(255,255,255,.18);
 
   border-radius: 30px;
 
@@ -76,7 +102,8 @@ body::before {
   box-shadow:
     0 25px 70px rgba(0,0,0,.35);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter:
+    blur(10px);
 }
 
 .hidden {
@@ -104,7 +131,8 @@ h2 {
   font-size:
     clamp(26px, 5vw, 38px);
 
-  margin: 10px 0 15px;
+  margin:
+    10px 0 15px;
 }
 
 p {
@@ -123,9 +151,11 @@ p {
 .badge {
   width: fit-content;
 
-  margin: 0 auto 14px;
+  margin:
+    0 auto 14px;
 
-  padding: 9px 17px;
+  padding:
+    9px 17px;
 
   border-radius: 999px;
 
@@ -140,7 +170,8 @@ button {
 
   border-radius: 15px;
 
-  padding: 13px 19px;
+  padding:
+    13px 19px;
 
   margin: 5px;
 
@@ -151,7 +182,6 @@ button {
   cursor: pointer;
 
   background: white;
-
   color: #073d87;
 
   box-shadow:
@@ -164,11 +194,13 @@ button {
 }
 
 button:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 }
 
 button:active {
-  transform: translateY(2px);
+  transform:
+    translateY(2px);
 
   box-shadow:
     0 2px 0 rgba(0,0,0,.25);
@@ -219,7 +251,8 @@ button:disabled {
 
   border-radius: 20px;
 
-  margin: 20px auto;
+  margin:
+    20px auto;
 
   max-width: 500px;
 
@@ -241,12 +274,14 @@ button:disabled {
 
   gap: 12px;
 
-  margin: 25px 0;
+  margin:
+    25px 0;
 }
 
 .info-box {
 
-  padding: 17px 10px;
+  padding:
+    17px 10px;
 
   text-align: center;
 
@@ -264,22 +299,26 @@ button:disabled {
 }
 
 /* =========================================================
-   TOURNAMENT HEADER
+   TOP BAR
    ========================================================= */
 
 .topbar {
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  align-items: center;
+  align-items:
+    center;
 
   gap: 10px;
 
-  padding: 13px 17px;
+  padding:
+    13px 17px;
 
-  margin-bottom: 20px;
+  margin-bottom:
+    20px;
 
   border-radius: 18px;
 
@@ -325,7 +364,8 @@ button:disabled {
 
   flex-direction: column;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
   transition: .2s;
 }
@@ -339,6 +379,14 @@ button:disabled {
     rgba(255,255,255,.13);
 }
 
+.game-card.completed {
+  border:
+    2px solid #65f49a;
+
+  background:
+    rgba(101,244,154,.08);
+}
+
 .game-icon {
 
   text-align: center;
@@ -350,7 +398,8 @@ button:disabled {
 
   text-align: center;
 
-  margin: 5px 0;
+  margin:
+    5px 0;
 }
 
 .game-card p {
@@ -358,6 +407,17 @@ button:disabled {
   font-size: 14px;
 
   opacity: .75;
+}
+
+.completed-badge {
+
+  text-align: center;
+
+  color: #65f49a;
+
+  font-weight: 900;
+
+  margin-top: 8px;
 }
 
 /* =========================================================
@@ -368,20 +428,24 @@ button:disabled {
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content:
+    space-between;
 
-  align-items: center;
+  align-items:
+    center;
 
   gap: 10px;
 
-  margin-bottom: 15px;
+  margin-bottom:
+    15px;
 }
 
 .game-header button {
 
   font-size: 13px;
 
-  padding: 9px 13px;
+  padding:
+    9px 13px;
 }
 
 /* =========================================================
@@ -399,7 +463,8 @@ button:disabled {
 
   max-width: 650px;
 
-  margin: 20px auto;
+  margin:
+    20px auto;
 }
 
 .memory-card {
@@ -414,12 +479,12 @@ button:disabled {
 .memory-inner {
 
   width: 100%;
-
   height: 100%;
 
   position: relative;
 
-  transform-style: preserve-3d;
+  transform-style:
+    preserve-3d;
 
   transition:
     transform .35s;
@@ -447,7 +512,8 @@ button:disabled {
 
   border-radius: 16px;
 
-  backface-visibility: hidden;
+  backface-visibility:
+    hidden;
 }
 
 .memory-front {
@@ -469,6 +535,8 @@ button:disabled {
 
   background: white;
 
+  color: #073d87;
+
   transform:
     rotateY(180deg);
 
@@ -477,6 +545,24 @@ button:disabled {
 
 .memory-card.matched .memory-back {
   background: #a8f4c0;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message {
+
+  min-height: 28px;
+
+  text-align: center;
+
+  font-weight: 900;
+
+  font-size: 18px;
+
+  margin:
+    15px 0;
 }
 
 /* =========================================================
@@ -491,11 +577,13 @@ button:disabled {
 
   max-width: 800px;
 
-  margin: 20px auto;
+  margin:
+    20px auto;
 
   overflow: hidden;
 
-  border: 5px solid white;
+  border:
+    5px solid white;
 
   border-radius: 25px;
 
@@ -530,7 +618,6 @@ button:disabled {
   position: absolute;
 
   width: 70px;
-
   height: 70px;
 
   display: flex;
@@ -543,7 +630,8 @@ button:disabled {
 
   background: #ffd83d;
 
-  border: 5px solid white;
+  border:
+    5px solid white;
 
   font-size: 38px;
 
@@ -573,9 +661,11 @@ button:disabled {
 
   display: flex;
 
-  justify-content: space-around;
+  justify-content:
+    space-around;
 
-  margin: 15px auto;
+  margin:
+    15px auto;
 
   max-width: 600px;
 }
@@ -587,7 +677,8 @@ button:disabled {
   background:
     rgba(255,255,255,.08);
 
-  padding: 12px 25px;
+  padding:
+    12px 25px;
 
   border-radius: 17px;
 }
@@ -609,7 +700,8 @@ button:disabled {
 
   text-align: center;
 
-  margin: 15px 0;
+  margin:
+    15px 0;
 }
 
 .mode-buttons button.active {
@@ -621,7 +713,8 @@ button:disabled {
   width:
     min(360px, 90vw);
 
-  margin: 25px auto;
+  margin:
+    25px auto;
 
   display: grid;
 
@@ -834,6 +927,8 @@ button:disabled {
 
   z-index: 5;
 
+  width: 100%;
+
   animation:
     finalAppear 1.2s ease;
 }
@@ -842,6 +937,7 @@ button:disabled {
 
   from {
     opacity: 0;
+
     transform:
       scale(.5)
       translateY(40px);
@@ -849,6 +945,7 @@ button:disabled {
 
   to {
     opacity: 1;
+
     transform:
       scale(1)
       translateY(0);
@@ -865,7 +962,8 @@ button:disabled {
 
   line-height: .95;
 
-  margin: 10px 0;
+  margin:
+    10px 0;
 
   color: #ffd83d;
 
@@ -892,7 +990,8 @@ button:disabled {
 
   font-weight: 900;
 
-  margin: 15px 0;
+  margin:
+    15px 0;
 }
 
 .final-trophy {
@@ -924,9 +1023,11 @@ button:disabled {
 
   max-width: 650px;
 
-  margin: 20px auto;
+  margin:
+    20px auto;
 
-  padding: 20px;
+  padding:
+    20px;
 
   border-radius: 25px;
 
@@ -940,15 +1041,90 @@ button:disabled {
     clamp(17px, 3vw, 22px);
 }
 
+/* =========================================================
+   FINAL SURPRISE BUTTON
+   ========================================================= */
+
+.final-button-area {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin:
+    25px auto 10px;
+}
+
+.final-surprise-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  min-width:
+    260px;
+
+  padding:
+    16px 25px;
+
+  font-size: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd83d,
+      #fff09a
+    );
+
+  color:
+    #13254c;
+
+  box-shadow:
+    0 8px 0 rgba(0,0,0,.25),
+    0 0 25px rgba(255,216,61,.35);
+
+  animation:
+    giftPulse 1.2s infinite alternate;
+}
+
+@keyframes giftPulse {
+
+  from {
+    transform:
+      scale(1);
+  }
+
+  to {
+    transform:
+      scale(1.06);
+  }
+
+}
+
+/* =========================================================
+   SURPRISE BOX
+   ========================================================= */
+
 .surprise-box {
 
-  margin-top: 25px;
+  width:
+    min(650px, 92%);
 
-  max-width: 650px;
+  margin:
+    25px auto 0;
 
-  padding: 25px;
+  padding:
+    28px;
 
-  border-radius: 25px;
+  border-radius: 28px;
 
   background:
     linear-gradient(
@@ -958,7 +1134,10 @@ button:disabled {
     );
 
   border:
-    2px solid rgba(255,216,61,.5);
+    2px solid rgba(255,216,61,.55);
+
+  box-shadow:
+    0 15px 50px rgba(0,0,0,.25);
 
   animation:
     surpriseAppear .7s ease;
@@ -968,6 +1147,7 @@ button:disabled {
 
   from {
     opacity: 0;
+
     transform:
       translateY(30px)
       scale(.9);
@@ -975,12 +1155,35 @@ button:disabled {
 
   to {
     opacity: 1;
+
     transform:
       translateY(0)
       scale(1);
   }
 
 }
+
+.surprise-box h2 {
+
+  color:
+    #ffd83d;
+
+  margin-top:
+    0;
+}
+
+.surprise-box p {
+
+  font-size:
+    clamp(17px, 3vw, 21px);
+
+  line-height:
+    1.7;
+}
+
+/* =========================================================
+   FLYING FOOTBALLS
+   ========================================================= */
 
 .flying-ball {
 
@@ -999,6 +1202,7 @@ button:disabled {
 @keyframes flyBall {
 
   from {
+
     transform:
       translate(0, 0)
       rotate(0deg)
@@ -1008,6 +1212,7 @@ button:disabled {
   }
 
   to {
+
     transform:
       translate(
         calc((var(--x) - 50) * 1vw),
@@ -1064,7 +1269,7 @@ button:disabled {
 }
 
 /* =========================================================
-   SHAKE
+   SCREEN SHAKE
    ========================================================= */
 
 .shake {
@@ -1076,23 +1281,28 @@ button:disabled {
 @keyframes screenShake {
 
   0%,100% {
-    transform: translateX(0);
+    transform:
+      translateX(0);
   }
 
   20% {
-    transform: translateX(-12px);
+    transform:
+      translateX(-12px);
   }
 
   40% {
-    transform: translateX(12px);
+    transform:
+      translateX(12px);
   }
 
   60% {
-    transform: translateX(-8px);
+    transform:
+      translateX(-8px);
   }
 
   80% {
-    transform: translateX(8px);
+    transform:
+      translateX(8px);
   }
 
 }
@@ -1108,11 +1318,13 @@ button:disabled {
   }
 
   .game-menu {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .tournament-info {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
   }
 
   .memory-board {
@@ -1133,15 +1345,82 @@ button:disabled {
   }
 
   .game-header {
-    align-items: flex-start;
+    align-items:
+      flex-start;
+
+    flex-wrap:
+      wrap;
   }
 
   .stat {
-    padding: 10px 12px;
+    padding:
+      10px 12px;
   }
 
   .final-surprise {
     min-height: 600px;
+  }
+
+  .final-button-area {
+    margin-top: 20px;
+  }
+
+}
+
+@media (max-width: 430px) {
+
+  .screen {
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .memory-card {
+    height: 82px;
+  }
+
+  .memory-front {
+    font-size: 28px;
+  }
+
+  .memory-back {
+    font-size: 32px;
+  }
+
+  .target-area {
+    height: 320px;
+  }
+
+  .target {
+    width: 62px;
+    height: 62px;
+    font-size: 32px;
+  }
+
+  .target-score {
+    gap: 5px;
+  }
+
+  .stat {
+    flex: 1;
+    padding:
+      8px 5px;
+    font-size: 12px;
+  }
+
+  .stat strong {
+    font-size: 24px;
+  }
+
+  .ttt-cell {
+    font-size: 40px;
+  }
+
+  .final-message {
+    padding: 15px;
+  }
+
+  .surprise-box {
+    padding: 20px 15px;
   }
 
 }
@@ -1157,7 +1436,10 @@ button:disabled {
      HOME
      ======================================================= -->
 
-<section id="home" class="screen">
+<section
+  id="home"
+  class="screen"
+>
 
   <div class="hero-ball">
     ⚽
@@ -1250,7 +1532,10 @@ button:disabled {
 
     <!-- MEMORY -->
 
-    <div class="game-card">
+    <div
+      id="memoryCard"
+      class="game-card"
+    >
 
       <div>
 
@@ -1266,6 +1551,13 @@ button:disabled {
           Match the football cards and
           test your memory.
         </p>
+
+        <div
+          id="memoryCompleted"
+          class="completed-badge hidden"
+        >
+          ✅ COMPLETED
+        </div>
 
       </div>
 
@@ -1284,7 +1576,10 @@ button:disabled {
 
     <!-- TARGET -->
 
-    <div class="game-card">
+    <div
+      id="targetCard"
+      class="game-card"
+    >
 
       <div>
 
@@ -1300,6 +1595,13 @@ button:disabled {
           Score as many goals as possible
           before time runs out.
         </p>
+
+        <div
+          id="targetCompleted"
+          class="completed-badge hidden"
+        >
+          ✅ COMPLETED
+        </div>
 
       </div>
 
@@ -1318,7 +1620,10 @@ button:disabled {
 
     <!-- TIC TAC TOE -->
 
-    <div class="game-card">
+    <div
+      id="tttCard"
+      class="game-card"
+    >
 
       <div>
 
@@ -1334,6 +1639,13 @@ button:disabled {
           Challenge a friend or take on
           the football AI.
         </p>
+
+        <div
+          id="tttCompleted"
+          class="completed-badge hidden"
+        >
+          ✅ COMPLETED
+        </div>
 
       </div>
 
@@ -1613,7 +1925,7 @@ button:disabled {
   class="screen hidden final-surprise"
 >
 
-  <!-- Countdown -->
+  <!-- COUNTDOWN -->
 
   <div
     id="countdown"
@@ -1623,7 +1935,7 @@ button:disabled {
   </div>
 
 
-  <!-- Final content -->
+  <!-- FINAL CONTENT -->
 
   <div
     id="finalContent"
@@ -1650,35 +1962,53 @@ button:disabled {
 
     <div class="final-message">
 
-      🏆 <strong>WORLD CUP CHAMPION</strong> 🏆
+      🏆
+      <strong>
+        WORLD CUP CHAMPION
+      </strong>
+      🏆
 
       <br><br>
 
-      You completed ALL 3 games!
+      You completed
+      <strong>ALL 3 GAMES!</strong>
 
-      <br>
+      <br><br>
 
       🧠 Memory ✅
       <br>
+
       🎯 Target Tap ✅
       <br>
+
       ⚽ Tic-Tac-Toe ✅
 
       <br><br>
 
       You are officially a
-      <strong>FOOTBALL LEGEND</strong> 😭🔥
+      <strong>
+        FOOTBALL LEGEND
+      </strong>
+      🔥
 
     </div>
 
     <div class="argentina-stripes"></div>
 
-    <button
-      class="primary"
-      onclick="showFinalMessage()"
-    >
-      🎁 ONE LAST SURPRISE
-    </button>
+    <!-- CENTERED FINAL BUTTON -->
+
+    <div class="final-button-area">
+
+      <button
+        class="final-surprise-button"
+        onclick="showFinalMessage()"
+      >
+        🎁 ONE LAST SURPRISE
+      </button>
+
+    </div>
+
+    <!-- FINAL MESSAGE -->
 
     <div
       id="surpriseBox"
@@ -1691,7 +2021,11 @@ button:disabled {
 
       <p>
 
-        Hope you have the BEST birthday everrrr! 🎉
+        Hope you have the
+        <strong>
+          BEST BIRTHDAY EVER
+        </strong>
+        🎉
 
         <br><br>
 
@@ -1701,7 +2035,14 @@ button:disabled {
 
         <br><br>
 
-        Today is YOUR day. 🏆
+        Today is
+        <strong>YOUR DAY.</strong>
+        🏆
+
+        <br><br>
+
+        Now go celebrate like
+        the football champion you are 😭🔥
 
         <br><br>
 
@@ -1727,13 +2068,8 @@ button:disabled {
 <script>
 
 /* =========================================================
-   GLOBAL VARIABLES
+   GLOBAL GAME PROGRESS
    ========================================================= */
-
-/*
-   Instead of simply counting wins, we keep track
-   of WHICH games have been completed.
-*/
 
 let completedGames = {
   memory: false,
@@ -1743,11 +2079,9 @@ let completedGames = {
 
 let beatenGames = 0;
 
-let pendingGame = null;
-
 
 /* =========================================================
-   MEMORY
+   MEMORY VARIABLES
    ========================================================= */
 
 let memoryFlipped = [];
@@ -1756,7 +2090,7 @@ let memoryLocked = false;
 
 
 /* =========================================================
-   TARGET
+   TARGET VARIABLES
    ========================================================= */
 
 let targetRunning = false;
@@ -1767,11 +2101,23 @@ let targetTimer = null;
 
 
 /* =========================================================
-   TIC TAC TOE
+   TIC TAC TOE VARIABLES
    ========================================================= */
 
 let tttMode = "2p";
-let tttBoard = [];
+
+let tttBoard = [
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  "",
+  ""
+];
+
 let tttCurrent = "⚽";
 let tttGameOver = false;
 
@@ -1805,29 +2151,34 @@ function sound(type) {
 
     if (type === "good") {
 
-      oscillator.frequency.value = 700;
+      oscillator.frequency.value =
+        700;
 
     }
 
     else if (type === "bad") {
 
-      oscillator.frequency.value = 180;
+      oscillator.frequency.value =
+        180;
 
     }
 
     else if (type === "final") {
 
-      oscillator.frequency.value = 950;
+      oscillator.frequency.value =
+        950;
 
     }
 
     else {
 
-      oscillator.frequency.value = 400;
+      oscillator.frequency.value =
+        400;
 
     }
 
-    oscillator.type = "sine";
+    oscillator.type =
+      "sine";
 
     gain.gain.setValueAtTime(
       .08,
@@ -1933,6 +2284,13 @@ function showGame(game) {
 
   }
 
+
+  if (game === "target") {
+
+    resetTargetDisplay();
+
+  }
+
 }
 
 
@@ -1947,10 +2305,67 @@ function updateGamesBeaten() {
       completedGames
     ).filter(Boolean).length;
 
+
   document
     .getElementById("gamesBeaten")
     .textContent =
     beatenGames;
+
+
+  updateCompletedCards();
+
+}
+
+
+function updateCompletedCards() {
+
+  const states = [
+    ["memory", "memoryCard", "memoryCompleted"],
+    ["target", "targetCard", "targetCompleted"],
+    ["ttt", "tttCard", "tttCompleted"]
+  ];
+
+
+  states.forEach(
+    ([game, cardId, badgeId]) => {
+
+      const card =
+        document.getElementById(
+          cardId
+        );
+
+      const badge =
+        document.getElementById(
+          badgeId
+        );
+
+
+      if (completedGames[game]) {
+
+        card.classList.add(
+          "completed"
+        );
+
+        badge.classList.remove(
+          "hidden"
+        );
+
+      }
+
+      else {
+
+        card.classList.remove(
+          "completed"
+        );
+
+        badge.classList.add(
+          "hidden"
+        );
+
+      }
+
+    }
+  );
 
 }
 
@@ -1961,17 +2376,16 @@ function updateGamesBeaten() {
 
 function beatGame(gameName) {
 
-  /*
-    If this game was already completed,
-    don't count it again.
-  */
+  /* Already completed? Do nothing. */
 
   if (completedGames[gameName]) {
     return;
   }
 
 
-  completedGames[gameName] = true;
+  completedGames[gameName] =
+    true;
+
 
   updateGamesBeaten();
 
@@ -1981,15 +2395,8 @@ function beatGame(gameName) {
 
 
   /*
-    Remember which game was just completed.
-  */
-
-  pendingGame = gameName;
-
-
-  /*
-    If all 3 are complete,
-    go to the BIG surprise.
+    ALL THREE GAMES COMPLETED
+    = FINAL SURPRISE
   */
 
   if (
@@ -2000,7 +2407,7 @@ function beatGame(gameName) {
 
     setTimeout(
       startFinalSurprise,
-      800
+      900
     );
 
     return;
@@ -2009,7 +2416,7 @@ function beatGame(gameName) {
 
 
   /*
-    Otherwise show normal reward.
+    Otherwise show the normal reward.
   */
 
   setTimeout(() => {
@@ -2028,7 +2435,7 @@ function beatGame(gameName) {
       beatenGames +
       "/3 games! Keep going! ⚽🔥";
 
-  }, 600);
+  }, 650);
 
 }
 
@@ -2051,25 +2458,34 @@ function continueTournament() {
 
 
 /* =========================================================
-   BIG FINAL SURPRISE
+   FINAL SURPRISE
    ========================================================= */
 
 function startFinalSurprise() {
 
   hideAllScreens();
 
+
   const screen =
     document.getElementById(
       "finalSurprise"
     );
 
-  screen.classList.remove("hidden");
+  screen.classList.remove(
+    "hidden"
+  );
 
-  screen.classList.add("shake");
+
+  screen.classList.add(
+    "shake"
+  );
+
 
   setTimeout(() => {
 
-    screen.classList.remove("shake");
+    screen.classList.remove(
+      "shake"
+    );
 
   }, 700);
 
@@ -2085,14 +2501,33 @@ function startFinalSurprise() {
     );
 
 
-  countdown.classList.remove("hidden");
+  const surpriseBox =
+    document.getElementById(
+      "surpriseBox"
+    );
 
-  finalContent.classList.add("hidden");
+
+  /*
+    Reset final state
+  */
+
+  countdown.classList.remove(
+    "hidden"
+  );
+
+  finalContent.classList.add(
+    "hidden"
+  );
+
+  surpriseBox.classList.add(
+    "hidden"
+  );
 
 
   let number = 3;
 
-  countdown.textContent = number;
+  countdown.textContent =
+    number;
 
   sound("good");
 
@@ -2120,6 +2555,7 @@ function startFinalSurprise() {
         countdown.textContent =
           "🎉";
 
+
         setTimeout(() => {
 
           countdown.classList.add(
@@ -2136,7 +2572,7 @@ function startFinalSurprise() {
 
           massiveCelebration();
 
-        }, 600);
+        }, 650);
 
       }
 
@@ -2146,7 +2582,7 @@ function startFinalSurprise() {
 
 
 /* =========================================================
-   FINAL SURPRISE MESSAGE
+   FINAL MESSAGE
    ========================================================= */
 
 function showFinalMessage() {
@@ -2156,11 +2592,30 @@ function showFinalMessage() {
       "surpriseBox"
     );
 
-  box.classList.remove("hidden");
+
+  box.classList.remove(
+    "hidden"
+  );
+
 
   sound("final");
 
   massiveCelebration();
+
+
+  /*
+    Scroll smoothly to the
+    newly revealed centered message.
+  */
+
+  setTimeout(() => {
+
+    box.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+
+  }, 100);
 
 }
 
@@ -2184,7 +2639,7 @@ function massiveCelebration() {
 
 
   /*
-    Huge confetti burst.
+    Huge confetti.
   */
 
   for (
@@ -2200,8 +2655,10 @@ function massiveCelebration() {
           "div"
         );
 
+
       item.className =
         "confetti";
+
 
       item.textContent =
         emojis[
@@ -2211,19 +2668,30 @@ function massiveCelebration() {
           )
         ];
 
+
       item.style.left =
-        Math.random() * 100 +
+        Math.random() *
+        100 +
         "vw";
 
+
       item.style.top =
-        (55 +
-        Math.random() * 40) +
+        (
+          55 +
+          Math.random() *
+          40
+        ) +
         "vh";
 
+
       item.style.fontSize =
-        (20 +
-        Math.random() * 30) +
+        (
+          20 +
+          Math.random() *
+          30
+        ) +
         "px";
+
 
       document.body.appendChild(
         item
@@ -2242,7 +2710,7 @@ function massiveCelebration() {
 
 
   /*
-    Footballs flying upwards.
+    Flying footballs and trophies.
   */
 
   for (
@@ -2258,25 +2726,32 @@ function massiveCelebration() {
           "div"
         );
 
+
       ball.className =
         "flying-ball";
+
 
       ball.textContent =
         Math.random() > .5
           ? "⚽"
           : "🏆";
 
+
       ball.style.left =
-        Math.random() * 100 +
+        Math.random() *
+        100 +
         "vw";
+
 
       ball.style.top =
         "100vh";
+
 
       ball.style.setProperty(
         "--x",
         Math.random() * 100
       );
+
 
       document.body.appendChild(
         ball
@@ -2297,7 +2772,7 @@ function massiveCelebration() {
 
 
 /* =========================================================
-   NORMAL CONFETTI
+   NORMAL CELEBRATION
    ========================================================= */
 
 function celebrate() {
@@ -2325,8 +2800,10 @@ function celebrate() {
           "div"
         );
 
+
       item.className =
         "confetti";
+
 
       item.textContent =
         emojis[
@@ -2336,13 +2813,19 @@ function celebrate() {
           )
         ];
 
+
       item.style.left =
-        Math.random() * 100 +
+        Math.random() *
+        100 +
         "vw";
 
+
       item.style.top =
-        (55 +
-        Math.random() * 40) +
+        (
+          55 +
+          Math.random() *
+          40
+        ) +
         "vh";
 
 
@@ -2416,7 +2899,9 @@ function setupMemory() {
       "memoryBoard"
     );
 
-  board.innerHTML = "";
+
+  board.innerHTML =
+    "";
 
 
   cards.forEach(
@@ -2427,11 +2912,14 @@ function setupMemory() {
           "div"
         );
 
+
       card.className =
         "memory-card";
 
+
       card.dataset.icon =
         icon;
+
 
       card.dataset.index =
         index;
@@ -2455,10 +2943,13 @@ function setupMemory() {
 
 
       card.onclick =
-        () => flipMemory(card);
+        () =>
+          flipMemory(card);
 
 
-      board.appendChild(card);
+      board.appendChild(
+        card
+      );
 
     }
   );
@@ -2491,9 +2982,13 @@ function flipMemory(card) {
     "flipped"
   );
 
+
   sound("normal");
 
-  memoryFlipped.push(card);
+
+  memoryFlipped.push(
+    card
+  );
 
 
   if (
@@ -2530,6 +3025,7 @@ function flipMemory(card) {
         "matched"
       );
 
+
       memoryMatches++;
 
 
@@ -2544,6 +3040,7 @@ function flipMemory(card) {
       memoryFlipped = [];
 
       memoryLocked = false;
+
 
       sound("good");
 
@@ -2582,9 +3079,11 @@ function flipMemory(card) {
         "flipped"
       );
 
+
       memoryFlipped = [];
 
       memoryLocked = false;
+
 
       sound("bad");
 
@@ -2598,6 +3097,45 @@ function flipMemory(card) {
 /* =========================================================
    GAME 2 — TARGET TAP
    ========================================================= */
+
+function resetTargetDisplay() {
+
+  stopTargetGame();
+
+
+  targetScore = 0;
+
+  targetTime = 20;
+
+  targetCombo = 0;
+
+
+  updateTargetStats();
+
+
+  document
+    .getElementById(
+      "targetMessage"
+    )
+    .textContent =
+    "Hit the ball as fast as you can!";
+
+
+  const ball =
+    document.getElementById(
+      "targetBall"
+    );
+
+
+  ball.style.left =
+    "50px";
+
+
+  ball.style.top =
+    "50px";
+
+}
+
 
 function startTargetGame() {
 
@@ -2622,7 +3160,8 @@ function startTargetGame() {
     .getElementById(
       "targetStartButton"
     )
-    .disabled = true;
+    .disabled =
+    true;
 
 
   document
@@ -2725,7 +3264,8 @@ function stopTargetGame() {
 
   if (button) {
 
-    button.disabled = false;
+    button.disabled =
+      false;
 
   }
 
@@ -2775,25 +3315,33 @@ function moveTarget() {
 
 
   const maxX =
-    area.clientWidth - 80;
+    Math.max(
+      10,
+      area.clientWidth - 80
+    );
 
 
   const maxY =
-    area.clientHeight - 80;
+    Math.max(
+      10,
+      area.clientHeight - 80
+    );
 
 
   ball.style.left =
     Math.max(
       5,
       Math.random() * maxX
-    ) + "px";
+    ) +
+    "px";
 
 
   ball.style.top =
     Math.max(
       5,
       Math.random() * maxY
-    ) + "px";
+    ) +
+    "px";
 
 }
 
@@ -2853,7 +3401,8 @@ function hitTarget() {
 
 function setTTTMode(mode) {
 
-  tttMode = mode;
+  tttMode =
+    mode;
 
 
   document
@@ -2883,7 +3432,13 @@ function setTTTMode(mode) {
 
 function resetTTT() {
 
+  /*
+    IMPORTANT:
+    Tic-Tac-Toe must have 9 cells.
+  */
+
   tttBoard = [
+    "",
     "",
     "",
     "",
@@ -2895,9 +3450,12 @@ function resetTTT() {
   ];
 
 
-  tttCurrent = "⚽";
+  tttCurrent =
+    "⚽";
 
-  tttGameOver = false;
+
+  tttGameOver =
+    false;
 
 
   renderTTT();
@@ -2913,7 +3471,8 @@ function renderTTT() {
     );
 
 
-  board.innerHTML = "";
+  board.innerHTML =
+    "";
 
 
   tttBoard.forEach(
@@ -2955,13 +3514,17 @@ function renderTTT() {
     " TURN";
 
 
-  document
-    .getElementById(
-      "tttMessage"
-    )
-    .textContent =
-    tttCurrent +
-    "'s turn";
+  if (!tttGameOver) {
+
+    document
+      .getElementById(
+        "tttMessage"
+      )
+      .textContent =
+      tttCurrent +
+      "'s turn";
+
+  }
 
 }
 
@@ -2971,6 +3534,20 @@ function tttMove(index) {
   if (
     tttGameOver ||
     tttBoard[index] !== ""
+  ) {
+
+    return;
+
+  }
+
+
+  /*
+    In AI mode, player is always ⚽.
+  */
+
+  if (
+    tttMode === "ai" &&
+    tttCurrent !== "⚽"
   ) {
 
     return;
@@ -3054,6 +3631,10 @@ function aiMove() {
     );
 
 
+  /*
+    Block the player.
+  */
+
   if (move === -1) {
 
     move =
@@ -3063,6 +3644,24 @@ function aiMove() {
 
   }
 
+
+  /*
+    Prefer center.
+  */
+
+  if (
+    move === -1 &&
+    tttBoard[4] === ""
+  ) {
+
+    move = 4;
+
+  }
+
+
+  /*
+    Otherwise random.
+  */
 
   if (move === -1) {
 
@@ -3096,7 +3695,8 @@ function aiMove() {
   }
 
 
-  tttCurrent = "⚽";
+  tttCurrent =
+    "⚽";
 
 
   renderTTT();
@@ -3217,7 +3817,8 @@ function checkTTTResult() {
         tttBoard[a];
 
 
-      tttGameOver = true;
+      tttGameOver =
+        true;
 
 
       document
@@ -3233,8 +3834,9 @@ function checkTTTResult() {
 
 
       /*
-        Only a TTT win counts.
-        A draw does not complete the game.
+        Any completed winning
+        match counts as completing
+        Game 3.
       */
 
       setTimeout(
@@ -3253,6 +3855,10 @@ function checkTTTResult() {
   }
 
 
+  /*
+    Draw does NOT count.
+  */
+
   if (
     tttBoard.every(
       cell =>
@@ -3260,7 +3866,8 @@ function checkTTTResult() {
     )
   ) {
 
-    tttGameOver = true;
+    tttGameOver =
+      true;
 
 
     document
@@ -3286,6 +3893,10 @@ function checkTTTResult() {
    ========================================================= */
 
 updateGamesBeaten();
+
+resetTTT();
+
+resetTargetDisplay();
 
 </script>
 
