@@ -11,7 +11,7 @@
 
 /* =========================================================
    HANOOD'S BIRTHDAY WORLD CUP
-   Everything is contained in this one file.
+   FINAL VERSION
    ========================================================= */
 
 * {
@@ -27,6 +27,7 @@ body {
   min-height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
+
   background:
     linear-gradient(
       135deg,
@@ -34,6 +35,7 @@ body {
       #073b86 45%,
       #63c9f5 100%
     );
+
   overflow-x: hidden;
 }
 
@@ -64,11 +66,16 @@ body::before {
 
 .screen {
   background: rgba(3, 16, 43, .92);
+
   border: 1px solid rgba(255,255,255,.18);
+
   border-radius: 30px;
+
   padding: 28px;
+
   box-shadow:
     0 25px 70px rgba(0,0,0,.35);
+
   backdrop-filter: blur(10px);
 }
 
@@ -82,20 +89,29 @@ body::before {
 
 h1 {
   text-align: center;
-  font-size: clamp(42px, 9vw, 78px);
+
+  font-size:
+    clamp(42px, 9vw, 78px);
+
   margin: 8px 0;
+
   line-height: 1;
 }
 
 h2 {
   text-align: center;
-  font-size: clamp(26px, 5vw, 38px);
+
+  font-size:
+    clamp(26px, 5vw, 38px);
+
   margin: 10px 0 15px;
 }
 
 p {
   text-align: center;
+
   line-height: 1.55;
+
   font-size: 18px;
 }
 
@@ -106,27 +122,40 @@ p {
 
 .badge {
   width: fit-content;
+
   margin: 0 auto 14px;
+
   padding: 9px 17px;
+
   border-radius: 999px;
+
   background: white;
   color: #06408d;
+
   font-weight: 900;
 }
 
 button {
   border: none;
+
   border-radius: 15px;
+
   padding: 13px 19px;
+
   margin: 5px;
+
   font-size: 16px;
+
   font-weight: 900;
+
   cursor: pointer;
 
   background: white;
+
   color: #073d87;
 
-  box-shadow: 0 6px 0 rgba(0,0,0,.25);
+  box-shadow:
+    0 6px 0 rgba(0,0,0,.25);
 
   transition:
     transform .15s,
@@ -140,7 +169,9 @@ button:hover {
 
 button:active {
   transform: translateY(2px);
-  box-shadow: 0 2px 0 rgba(0,0,0,.25);
+
+  box-shadow:
+    0 2px 0 rgba(0,0,0,.25);
 }
 
 button:disabled {
@@ -159,24 +190,37 @@ button:disabled {
 
 .hero-ball {
   font-size: 80px;
+
   text-align: center;
-  animation: ballFloat 1.5s ease-in-out infinite alternate;
+
+  animation:
+    ballFloat 1.5s ease-in-out infinite alternate;
 }
 
 @keyframes ballFloat {
+
   from {
-    transform: translateY(0) rotate(-5deg);
+    transform:
+      translateY(0)
+      rotate(-5deg);
   }
 
   to {
-    transform: translateY(-12px) rotate(8deg);
+    transform:
+      translateY(-12px)
+      rotate(8deg);
   }
+
 }
 
 .argentina-stripes {
+
   height: 9px;
+
   border-radius: 20px;
+
   margin: 20px auto;
+
   max-width: 500px;
 
   background:
@@ -189,21 +233,33 @@ button:disabled {
 }
 
 .tournament-info {
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 12px;
+
   margin: 25px 0;
 }
 
 .info-box {
+
   padding: 17px 10px;
+
   text-align: center;
-  background: rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.08);
+
   border-radius: 18px;
 }
 
 .info-box strong {
+
   display: block;
+
   font-size: 26px;
 }
 
@@ -212,16 +268,23 @@ button:disabled {
    ========================================================= */
 
 .topbar {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   gap: 10px;
 
   padding: 13px 17px;
+
   margin-bottom: 20px;
 
   border-radius: 18px;
-  background: rgba(255,255,255,.09);
+
+  background:
+    rgba(255,255,255,.09);
 
   font-weight: 900;
 }
@@ -235,44 +298,65 @@ button:disabled {
    ========================================================= */
 
 .game-menu {
+
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 15px;
 }
 
 .game-card {
+
   min-height: 190px;
 
   border-radius: 22px;
+
   padding: 20px;
 
-  background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.12);
+  background:
+    rgba(255,255,255,.08);
+
+  border:
+    1px solid rgba(255,255,255,.12);
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: space-between;
 
   transition: .2s;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
-  background: rgba(255,255,255,.13);
+
+  transform:
+    translateY(-5px);
+
+  background:
+    rgba(255,255,255,.13);
 }
 
 .game-icon {
+
   text-align: center;
+
   font-size: 52px;
 }
 
 .game-card h3 {
+
   text-align: center;
+
   margin: 5px 0;
 }
 
 .game-card p {
+
   font-size: 14px;
+
   opacity: .75;
 }
 
@@ -281,16 +365,22 @@ button:disabled {
    ========================================================= */
 
 .game-header {
+
   display: flex;
+
   justify-content: space-between;
+
   align-items: center;
+
   gap: 10px;
 
   margin-bottom: 15px;
 }
 
 .game-header button {
+
   font-size: 13px;
+
   padding: 9px 13px;
 }
 
@@ -299,39 +389,60 @@ button:disabled {
    ========================================================= */
 
 .memory-board {
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
   gap: 10px;
+
   max-width: 650px;
+
   margin: 20px auto;
 }
 
 .memory-card {
+
   height: 115px;
+
   perspective: 700px;
+
   cursor: pointer;
 }
 
 .memory-inner {
+
   width: 100%;
+
   height: 100%;
+
   position: relative;
+
   transform-style: preserve-3d;
-  transition: transform .35s;
+
+  transition:
+    transform .35s;
 }
 
 .memory-card.flipped .memory-inner,
 .memory-card.matched .memory-inner {
-  transform: rotateY(180deg);
+
+  transform:
+    rotateY(180deg);
 }
 
 .memory-front,
 .memory-back {
+
   position: absolute;
+
   inset: 0;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 16px;
@@ -340,6 +451,7 @@ button:disabled {
 }
 
 .memory-front {
+
   background:
     linear-gradient(
       135deg,
@@ -347,14 +459,19 @@ button:disabled {
       #064183
     );
 
-  border: 3px solid rgba(255,255,255,.5);
+  border:
+    3px solid rgba(255,255,255,.5);
 
   font-size: 38px;
 }
 
 .memory-back {
+
   background: white;
-  transform: rotateY(180deg);
+
+  transform:
+    rotateY(180deg);
+
   font-size: 43px;
 }
 
@@ -367,9 +484,11 @@ button:disabled {
    ========================================================= */
 
 .target-area {
+
   position: relative;
 
   height: 420px;
+
   max-width: 800px;
 
   margin: 20px auto;
@@ -377,6 +496,7 @@ button:disabled {
   overflow: hidden;
 
   border: 5px solid white;
+
   border-radius: 25px;
 
   background:
@@ -388,26 +508,35 @@ button:disabled {
 }
 
 .target-area::after {
+
   content: "";
 
   position: absolute;
+
   left: 50%;
+
   top: 0;
+
   bottom: 0;
 
-  border-left: 3px solid rgba(255,255,255,.25);
+  border-left:
+    3px solid rgba(255,255,255,.25);
 
   pointer-events: none;
 }
 
 .target {
+
   position: absolute;
 
   width: 70px;
+
   height: 70px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -427,32 +556,48 @@ button:disabled {
 
   z-index: 5;
 
-  animation: targetPulse .65s infinite alternate;
+  animation:
+    targetPulse .65s infinite alternate;
 }
 
 @keyframes targetPulse {
+
   to {
-    transform: scale(1.08);
+    transform:
+      scale(1.08);
   }
+
 }
 
 .target-score {
+
   display: flex;
+
   justify-content: space-around;
+
   margin: 15px auto;
+
   max-width: 600px;
 }
 
 .stat {
+
   text-align: center;
-  background: rgba(255,255,255,.08);
+
+  background:
+    rgba(255,255,255,.08);
+
   padding: 12px 25px;
+
   border-radius: 17px;
 }
 
 .stat strong {
+
   display: block;
+
   font-size: 30px;
+
   color: #ffd83d;
 }
 
@@ -461,7 +606,9 @@ button:disabled {
    ========================================================= */
 
 .mode-buttons {
+
   text-align: center;
+
   margin: 15px 0;
 }
 
@@ -470,18 +617,26 @@ button:disabled {
 }
 
 .ttt-board {
-  width: min(360px, 90vw);
+
+  width:
+    min(360px, 90vw);
+
   margin: 25px auto;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
   gap: 8px;
 }
 
 .ttt-cell {
+
   aspect-ratio: 1;
 
   border: none;
+
   border-radius: 15px;
 
   background: white;
@@ -489,27 +644,34 @@ button:disabled {
   color: #073d87;
 
   font-size: 52px;
+
   font-weight: 900;
 
   margin: 0;
+
   padding: 0;
 
-  box-shadow: 0 5px 0 rgba(0,0,0,.25);
+  box-shadow:
+    0 5px 0 rgba(0,0,0,.25);
 }
 
 .ttt-cell:hover {
-  transform: scale(1.03);
+
+  transform:
+    scale(1.03);
 }
 
 /* =========================================================
-   REWARD
+   NORMAL REWARD
    ========================================================= */
 
 .reward {
+
   text-align: center;
 }
 
 .trophy {
+
   font-size: 120px;
 
   animation:
@@ -518,12 +680,17 @@ button:disabled {
 }
 
 @keyframes trophyBounce {
+
   to {
-    transform: translateY(-12px) rotate(3deg);
+    transform:
+      translateY(-12px)
+      rotate(3deg);
   }
+
 }
 
 @keyframes trophySpin {
+
   0%, 90% {
     rotate: 0deg;
   }
@@ -535,20 +702,323 @@ button:disabled {
   100% {
     rotate: 0deg;
   }
+
 }
 
 .siu {
-  font-size: clamp(35px, 8vw, 70px);
+
+  font-size:
+    clamp(35px, 8vw, 70px);
+
   font-weight: 1000;
+
   color: #ffd83d;
 
-  animation: siu .6s infinite alternate;
+  animation:
+    siu .6s infinite alternate;
 }
 
 @keyframes siu {
+
   to {
-    transform: scale(1.04);
+    transform:
+      scale(1.04);
   }
+
+}
+
+/* =========================================================
+   FINAL SURPRISE
+   ========================================================= */
+
+.final-surprise {
+
+  text-align: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  min-height: 650px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.final-surprise::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: -100px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,216,61,.20),
+      transparent 35%
+    );
+
+  animation:
+    glow 2s infinite alternate;
+
+  pointer-events: none;
+}
+
+@keyframes glow {
+
+  from {
+    transform: scale(.8);
+    opacity: .5;
+  }
+
+  to {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+
+}
+
+.countdown {
+
+  position: relative;
+
+  z-index: 5;
+
+  font-size:
+    clamp(100px, 25vw, 230px);
+
+  font-weight: 1000;
+
+  color: #ffd83d;
+
+  text-shadow:
+    0 10px 30px rgba(0,0,0,.5);
+
+  animation:
+    countdownPop .8s;
+}
+
+@keyframes countdownPop {
+
+  0% {
+    transform:
+      scale(.2);
+
+    opacity: 0;
+  }
+
+  60% {
+    transform:
+      scale(1.2);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      scale(1);
+  }
+
+}
+
+.final-content {
+
+  position: relative;
+
+  z-index: 5;
+
+  animation:
+    finalAppear 1.2s ease;
+}
+
+@keyframes finalAppear {
+
+  from {
+    opacity: 0;
+    transform:
+      scale(.5)
+      translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      scale(1)
+      translateY(0);
+  }
+
+}
+
+.final-title {
+
+  font-size:
+    clamp(42px, 10vw, 95px);
+
+  font-weight: 1000;
+
+  line-height: .95;
+
+  margin: 10px 0;
+
+  color: #ffd83d;
+
+  text-shadow:
+    0 7px 20px rgba(0,0,0,.4);
+
+  animation:
+    birthdayPulse .8s infinite alternate;
+}
+
+@keyframes birthdayPulse {
+
+  to {
+    transform:
+      scale(1.035);
+  }
+
+}
+
+.final-subtitle {
+
+  font-size:
+    clamp(24px, 5vw, 42px);
+
+  font-weight: 900;
+
+  margin: 15px 0;
+}
+
+.final-trophy {
+
+  font-size:
+    clamp(90px, 18vw, 160px);
+
+  animation:
+    finalTrophy 1.2s infinite alternate;
+}
+
+@keyframes finalTrophy {
+
+  from {
+    transform:
+      translateY(0)
+      rotate(-5deg);
+  }
+
+  to {
+    transform:
+      translateY(-18px)
+      rotate(5deg);
+  }
+
+}
+
+.final-message {
+
+  max-width: 650px;
+
+  margin: 20px auto;
+
+  padding: 20px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(255,255,255,.10);
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
+  font-size:
+    clamp(17px, 3vw, 22px);
+}
+
+.surprise-box {
+
+  margin-top: 25px;
+
+  max-width: 650px;
+
+  padding: 25px;
+
+  border-radius: 25px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,216,61,.20),
+      rgba(117,211,244,.15)
+    );
+
+  border:
+    2px solid rgba(255,216,61,.5);
+
+  animation:
+    surpriseAppear .7s ease;
+}
+
+@keyframes surpriseAppear {
+
+  from {
+    opacity: 0;
+    transform:
+      translateY(30px)
+      scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+}
+
+.flying-ball {
+
+  position: fixed;
+
+  z-index: 10000;
+
+  pointer-events: none;
+
+  font-size: 35px;
+
+  animation:
+    flyBall 2s linear forwards;
+}
+
+@keyframes flyBall {
+
+  from {
+    transform:
+      translate(0, 0)
+      rotate(0deg)
+      scale(.5);
+
+    opacity: 1;
+  }
+
+  to {
+    transform:
+      translate(
+        calc((var(--x) - 50) * 1vw),
+        -110vh
+      )
+      rotate(900deg)
+      scale(1.4);
+
+    opacity: 0;
+  }
+
 }
 
 /* =========================================================
@@ -556,19 +1026,23 @@ button:disabled {
    ========================================================= */
 
 .confetti {
+
   position: fixed;
+
   z-index: 9999;
 
   pointer-events: none;
 
   font-size: 27px;
 
-  animation: confettiFly 1.5s forwards;
+  animation:
+    confettiFly 1.5s forwards;
 }
 
 @keyframes confettiFly {
 
   0% {
+
     transform:
       translateY(0)
       rotate(0)
@@ -578,6 +1052,7 @@ button:disabled {
   }
 
   100% {
+
     transform:
       translateY(-260px)
       rotate(500deg)
@@ -585,6 +1060,41 @@ button:disabled {
 
     opacity: 0;
   }
+
+}
+
+/* =========================================================
+   SHAKE
+   ========================================================= */
+
+.shake {
+
+  animation:
+    screenShake .6s;
+}
+
+@keyframes screenShake {
+
+  0%,100% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-12px);
+  }
+
+  40% {
+    transform: translateX(12px);
+  }
+
+  60% {
+    transform: translateX(-8px);
+  }
+
+  80% {
+    transform: translateX(8px);
+  }
+
 }
 
 /* =========================================================
@@ -606,7 +1116,8 @@ button:disabled {
   }
 
   .memory-board {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+      repeat(3, 1fr);
   }
 
   .memory-card {
@@ -625,16 +1136,22 @@ button:disabled {
     align-items: flex-start;
   }
 
+  .stat {
+    padding: 10px 12px;
+  }
+
+  .final-surprise {
+    min-height: 600px;
+  }
+
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div class="container">
-
 
 <!-- =======================================================
      HOME
@@ -703,7 +1220,6 @@ button:disabled {
 </section>
 
 
-
 <!-- =======================================================
      TOURNAMENT MENU
      ======================================================= -->
@@ -731,7 +1247,6 @@ button:disabled {
   </h2>
 
   <div class="game-menu">
-
 
     <!-- MEMORY -->
 
@@ -839,7 +1354,6 @@ button:disabled {
 </section>
 
 
-
 <!-- =======================================================
      MEMORY GAME
      ======================================================= -->
@@ -881,7 +1395,6 @@ button:disabled {
   ></div>
 
 </section>
-
 
 
 <!-- =======================================================
@@ -971,7 +1484,6 @@ button:disabled {
 </section>
 
 
-
 <!-- =======================================================
      TIC TAC TOE
      ======================================================= -->
@@ -997,7 +1509,6 @@ button:disabled {
 
   </div>
 
-
   <div class="mode-buttons">
 
     <button
@@ -1017,12 +1528,10 @@ button:disabled {
 
   </div>
 
-
   <div
     id="tttBoard"
     class="ttt-board"
   ></div>
-
 
   <div
     id="tttMessage"
@@ -1030,7 +1539,6 @@ button:disabled {
   >
     ⚽'s turn
   </div>
-
 
   <div class="center">
 
@@ -1043,9 +1551,8 @@ button:disabled {
 </section>
 
 
-
 <!-- =======================================================
-     REWARD
+     NORMAL REWARD
      ======================================================= -->
 
 <section
@@ -1077,8 +1584,8 @@ button:disabled {
     🎂 HAPPY BIRTHDAY HANOOD! 🎂
   </p>
 
-  <p>
-    Today you're officially a football legend. ⚽🔥
+  <p id="rewardProgress">
+    Keep going... more games are waiting! ⚽🔥
   </p>
 
   <div class="argentina-stripes"></div>
@@ -1087,13 +1594,9 @@ button:disabled {
 
     <button
       class="primary"
-      onclick="celebrate()"
+      onclick="continueTournament()"
     >
-      🎉 CELEBRATE!
-    </button>
-
-    <button onclick="backToMenu()">
-      ⚽ PLAY MORE
+      ⚽ CONTINUE TOURNAMENT
     </button>
 
   </div>
@@ -1101,8 +1604,124 @@ button:disabled {
 </section>
 
 
-</div>
+<!-- =======================================================
+     FINAL BIRTHDAY SURPRISE
+     ======================================================= -->
 
+<section
+  id="finalSurprise"
+  class="screen hidden final-surprise"
+>
+
+  <!-- Countdown -->
+
+  <div
+    id="countdown"
+    class="countdown"
+  >
+    3
+  </div>
+
+
+  <!-- Final content -->
+
+  <div
+    id="finalContent"
+    class="final-content hidden"
+  >
+
+    <div class="final-trophy">
+      🏆
+    </div>
+
+    <div class="final-title">
+      HAPPY BIRTHDAY
+      <br>
+      HANOODDDD!!! 🎉
+    </div>
+
+    <div class="final-subtitle">
+      YOU DID ITTTT! ⚽🐐
+    </div>
+
+    <div class="siu">
+      SIUUUUUUUUUU!
+    </div>
+
+    <div class="final-message">
+
+      🏆 <strong>WORLD CUP CHAMPION</strong> 🏆
+
+      <br><br>
+
+      You completed ALL 3 games!
+
+      <br>
+
+      🧠 Memory ✅
+      <br>
+      🎯 Target Tap ✅
+      <br>
+      ⚽ Tic-Tac-Toe ✅
+
+      <br><br>
+
+      You are officially a
+      <strong>FOOTBALL LEGEND</strong> 😭🔥
+
+    </div>
+
+    <div class="argentina-stripes"></div>
+
+    <button
+      class="primary"
+      onclick="showFinalMessage()"
+    >
+      🎁 ONE LAST SURPRISE
+    </button>
+
+    <div
+      id="surpriseBox"
+      class="surprise-box hidden"
+    >
+
+      <h2>
+        🎂 HAPPY BIRTHDAY BROOOO ❤️
+      </h2>
+
+      <p>
+
+        Hope you have the BEST birthday everrrr! 🎉
+
+        <br><br>
+
+        Keep scoring goals,
+        keep winning,
+        keep being a legend. ⚽🐐
+
+        <br><br>
+
+        Today is YOUR day. 🏆
+
+        <br><br>
+
+        <strong>
+          SIUUUUUUUUUUUUUUUUU 🔥
+        </strong>
+
+      </p>
+
+      <div style="font-size:45px;">
+        ⚽ 🏆 🎂 🎉 🐐 🇦🇷
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</div>
 
 
 <script>
@@ -1111,17 +1730,45 @@ button:disabled {
    GLOBAL VARIABLES
    ========================================================= */
 
+/*
+   Instead of simply counting wins, we keep track
+   of WHICH games have been completed.
+*/
+
+let completedGames = {
+  memory: false,
+  target: false,
+  ttt: false
+};
+
 let beatenGames = 0;
+
+let pendingGame = null;
+
+
+/* =========================================================
+   MEMORY
+   ========================================================= */
 
 let memoryFlipped = [];
 let memoryMatches = 0;
 let memoryLocked = false;
+
+
+/* =========================================================
+   TARGET
+   ========================================================= */
 
 let targetRunning = false;
 let targetScore = 0;
 let targetTime = 20;
 let targetCombo = 0;
 let targetTimer = null;
+
+
+/* =========================================================
+   TIC TAC TOE
+   ========================================================= */
 
 let tttMode = "2p";
 let tttBoard = [];
@@ -1130,7 +1777,7 @@ let tttGameOver = false;
 
 
 /* =========================================================
-   SIMPLE SOUND EFFECTS
+   SOUND
    ========================================================= */
 
 function sound(type) {
@@ -1151,18 +1798,33 @@ function sound(type) {
       audio.createGain();
 
     oscillator.connect(gain);
-    gain.connect(audio.destination);
+
+    gain.connect(
+      audio.destination
+    );
 
     if (type === "good") {
+
       oscillator.frequency.value = 700;
+
     }
 
     else if (type === "bad") {
+
       oscillator.frequency.value = 180;
+
+    }
+
+    else if (type === "final") {
+
+      oscillator.frequency.value = 950;
+
     }
 
     else {
+
       oscillator.frequency.value = 400;
+
     }
 
     oscillator.type = "sine";
@@ -1183,10 +1845,11 @@ function sound(type) {
       audio.currentTime + .18
     );
 
-  } catch (e) {
+  }
 
-    /* Sound is optional.
-       Game still works if browser blocks it. */
+  catch (e) {
+
+    /* Sound is optional. */
 
   }
 
@@ -1205,7 +1868,8 @@ function hideAllScreens() {
     "memory",
     "target",
     "ttt",
-    "reward"
+    "reward",
+    "finalSurprise"
   ];
 
   screens.forEach(id => {
@@ -1226,6 +1890,8 @@ function openTournament() {
   document
     .getElementById("menu")
     .classList.remove("hidden");
+
+  updateGamesBeaten();
 
 }
 
@@ -1255,17 +1921,31 @@ function showGame(game) {
 
 
   if (game === "memory") {
+
     setupMemory();
+
   }
 
+
   if (game === "ttt") {
+
     resetTTT();
+
   }
 
 }
 
 
+/* =========================================================
+   GAME PROGRESS
+   ========================================================= */
+
 function updateGamesBeaten() {
+
+  beatenGames =
+    Object.values(
+      completedGames
+    ).filter(Boolean).length;
 
   document
     .getElementById("gamesBeaten")
@@ -1276,22 +1956,61 @@ function updateGamesBeaten() {
 
 
 /* =========================================================
-   REWARD
+   GAME COMPLETION
    ========================================================= */
 
-function beatGame() {
+function beatGame(gameName) {
 
-  if (beatenGames >= 3) {
+  /*
+    If this game was already completed,
+    don't count it again.
+  */
+
+  if (completedGames[gameName]) {
     return;
   }
 
-  beatenGames++;
+
+  completedGames[gameName] = true;
 
   updateGamesBeaten();
 
   sound("good");
 
   celebrate();
+
+
+  /*
+    Remember which game was just completed.
+  */
+
+  pendingGame = gameName;
+
+
+  /*
+    If all 3 are complete,
+    go to the BIG surprise.
+  */
+
+  if (
+    completedGames.memory &&
+    completedGames.target &&
+    completedGames.ttt
+  ) {
+
+    setTimeout(
+      startFinalSurprise,
+      800
+    );
+
+    return;
+
+  }
+
+
+  /*
+    Otherwise show normal reward.
+  */
 
   setTimeout(() => {
 
@@ -1301,36 +2020,185 @@ function beatGame() {
       .getElementById("reward")
       .classList.remove("hidden");
 
-  }, 500);
+
+    document
+      .getElementById("rewardProgress")
+      .textContent =
+      "You have completed " +
+      beatenGames +
+      "/3 games! Keep going! ⚽🔥";
+
+  }, 600);
 
 }
 
 
 /* =========================================================
-   CONFETTI
+   CONTINUE TOURNAMENT
    ========================================================= */
 
-function celebrate() {
+function continueTournament() {
+
+  hideAllScreens();
+
+  document
+    .getElementById("menu")
+    .classList.remove("hidden");
+
+  updateGamesBeaten();
+
+}
+
+
+/* =========================================================
+   BIG FINAL SURPRISE
+   ========================================================= */
+
+function startFinalSurprise() {
+
+  hideAllScreens();
+
+  const screen =
+    document.getElementById(
+      "finalSurprise"
+    );
+
+  screen.classList.remove("hidden");
+
+  screen.classList.add("shake");
+
+  setTimeout(() => {
+
+    screen.classList.remove("shake");
+
+  }, 700);
+
+
+  const countdown =
+    document.getElementById(
+      "countdown"
+    );
+
+  const finalContent =
+    document.getElementById(
+      "finalContent"
+    );
+
+
+  countdown.classList.remove("hidden");
+
+  finalContent.classList.add("hidden");
+
+
+  let number = 3;
+
+  countdown.textContent = number;
+
+  sound("good");
+
+
+  const timer =
+    setInterval(() => {
+
+      number--;
+
+
+      if (number > 0) {
+
+        countdown.textContent =
+          number;
+
+        sound("good");
+
+      }
+
+
+      else {
+
+        clearInterval(timer);
+
+        countdown.textContent =
+          "🎉";
+
+        setTimeout(() => {
+
+          countdown.classList.add(
+            "hidden"
+          );
+
+          finalContent.classList.remove(
+            "hidden"
+          );
+
+          sound("final");
+
+          celebrate();
+
+          massiveCelebration();
+
+        }, 600);
+
+      }
+
+    }, 1000);
+
+}
+
+
+/* =========================================================
+   FINAL SURPRISE MESSAGE
+   ========================================================= */
+
+function showFinalMessage() {
+
+  const box =
+    document.getElementById(
+      "surpriseBox"
+    );
+
+  box.classList.remove("hidden");
+
+  sound("final");
+
+  massiveCelebration();
+
+}
+
+
+/* =========================================================
+   MASSIVE CELEBRATION
+   ========================================================= */
+
+function massiveCelebration() {
 
   const emojis = [
     "⚽",
     "🏆",
-    "⭐",
     "🎉",
+    "🎂",
+    "⭐",
     "🔥",
-    "🇦🇷"
+    "🇦🇷",
+    "🐐"
   ];
+
+
+  /*
+    Huge confetti burst.
+  */
 
   for (
     let i = 0;
-    i < 45;
+    i < 100;
     i++
   ) {
 
     setTimeout(() => {
 
       const item =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
 
       item.className =
         "confetti";
@@ -1344,12 +2212,144 @@ function celebrate() {
         ];
 
       item.style.left =
-        Math.random() * 100 + "vw";
+        Math.random() * 100 +
+        "vw";
 
       item.style.top =
-        (55 + Math.random() * 40) + "vh";
+        (55 +
+        Math.random() * 40) +
+        "vh";
 
-      document.body.appendChild(item);
+      item.style.fontSize =
+        (20 +
+        Math.random() * 30) +
+        "px";
+
+      document.body.appendChild(
+        item
+      );
+
+
+      setTimeout(() => {
+
+        item.remove();
+
+      }, 1600);
+
+    }, i * 15);
+
+  }
+
+
+  /*
+    Footballs flying upwards.
+  */
+
+  for (
+    let i = 0;
+    i < 20;
+    i++
+  ) {
+
+    setTimeout(() => {
+
+      const ball =
+        document.createElement(
+          "div"
+        );
+
+      ball.className =
+        "flying-ball";
+
+      ball.textContent =
+        Math.random() > .5
+          ? "⚽"
+          : "🏆";
+
+      ball.style.left =
+        Math.random() * 100 +
+        "vw";
+
+      ball.style.top =
+        "100vh";
+
+      ball.style.setProperty(
+        "--x",
+        Math.random() * 100
+      );
+
+      document.body.appendChild(
+        ball
+      );
+
+
+      setTimeout(() => {
+
+        ball.remove();
+
+      }, 2200);
+
+    }, i * 80);
+
+  }
+
+}
+
+
+/* =========================================================
+   NORMAL CONFETTI
+   ========================================================= */
+
+function celebrate() {
+
+  const emojis = [
+    "⚽",
+    "🏆",
+    "⭐",
+    "🎉",
+    "🔥",
+    "🇦🇷"
+  ];
+
+
+  for (
+    let i = 0;
+    i < 45;
+    i++
+  ) {
+
+    setTimeout(() => {
+
+      const item =
+        document.createElement(
+          "div"
+        );
+
+      item.className =
+        "confetti";
+
+      item.textContent =
+        emojis[
+          Math.floor(
+            Math.random() *
+            emojis.length
+          )
+        ];
+
+      item.style.left =
+        Math.random() * 100 +
+        "vw";
+
+      item.style.top =
+        (55 +
+        Math.random() * 40) +
+        "vh";
+
+
+      document.body.appendChild(
+        item
+      );
+
 
       setTimeout(() => {
 
@@ -1371,15 +2371,24 @@ function celebrate() {
 function setupMemory() {
 
   memoryFlipped = [];
+
   memoryMatches = 0;
+
   memoryLocked = false;
 
-  document
-    .getElementById("memoryMatches")
-    .textContent = "0";
 
   document
-    .getElementById("memoryMessage")
+    .getElementById(
+      "memoryMatches"
+    )
+    .textContent =
+    "0";
+
+
+  document
+    .getElementById(
+      "memoryMessage"
+    )
     .textContent =
     "Find all the pairs! 🧠";
 
@@ -1393,55 +2402,66 @@ function setupMemory() {
     "🐐"
   ];
 
+
   const cards =
     [...icons, ...icons]
-      .sort(() => Math.random() - .5);
+      .sort(
+        () =>
+          Math.random() - .5
+      );
 
 
   const board =
-    document.getElementById("memoryBoard");
+    document.getElementById(
+      "memoryBoard"
+    );
 
   board.innerHTML = "";
 
 
-  cards.forEach((icon, index) => {
+  cards.forEach(
+    (icon, index) => {
 
-    const card =
-      document.createElement("div");
+      const card =
+        document.createElement(
+          "div"
+        );
 
-    card.className =
-      "memory-card";
+      card.className =
+        "memory-card";
 
-    card.dataset.icon =
-      icon;
+      card.dataset.icon =
+        icon;
 
-    card.dataset.index =
-      index;
+      card.dataset.index =
+        index;
 
 
-    card.innerHTML = `
+      card.innerHTML = `
 
-      <div class="memory-inner">
+        <div class="memory-inner">
 
-        <div class="memory-front">
-          ⚽
+          <div class="memory-front">
+            ⚽
+          </div>
+
+          <div class="memory-back">
+            ${icon}
+          </div>
+
         </div>
 
-        <div class="memory-back">
-          ${icon}
-        </div>
-
-      </div>
-
-    `;
+      `;
 
 
-    card.onclick =
-      () => flipMemory(card);
+      card.onclick =
+        () => flipMemory(card);
 
-    board.appendChild(card);
 
-  });
+      board.appendChild(card);
+
+    }
+  );
 
 }
 
@@ -1452,27 +2472,41 @@ function flipMemory(card) {
     return;
   }
 
+
   if (
-    card.classList.contains("flipped") ||
-    card.classList.contains("matched")
+    card.classList.contains(
+      "flipped"
+    ) ||
+    card.classList.contains(
+      "matched"
+    )
   ) {
+
     return;
+
   }
 
 
-  card.classList.add("flipped");
+  card.classList.add(
+    "flipped"
+  );
 
   sound("normal");
 
   memoryFlipped.push(card);
 
 
-  if (memoryFlipped.length !== 2) {
+  if (
+    memoryFlipped.length !== 2
+  ) {
+
     return;
+
   }
 
 
   memoryLocked = true;
+
 
   const first =
     memoryFlipped[0];
@@ -1488,15 +2522,24 @@ function flipMemory(card) {
 
     setTimeout(() => {
 
-      first.classList.add("matched");
-      second.classList.add("matched");
+      first.classList.add(
+        "matched"
+      );
+
+      second.classList.add(
+        "matched"
+      );
 
       memoryMatches++;
 
+
       document
-        .getElementById("memoryMatches")
+        .getElementById(
+          "memoryMatches"
+        )
         .textContent =
         memoryMatches;
+
 
       memoryFlipped = [];
 
@@ -1505,14 +2548,21 @@ function flipMemory(card) {
       sound("good");
 
 
-      if (memoryMatches === 6) {
+      if (
+        memoryMatches === 6
+      ) {
 
         document
-          .getElementById("memoryMessage")
+          .getElementById(
+            "memoryMessage"
+          )
           .textContent =
           "PERFECT MEMORY! 🧠🐐";
 
-        beatGame();
+
+        beatGame(
+          "memory"
+        );
 
       }
 
@@ -1524,8 +2574,13 @@ function flipMemory(card) {
 
     setTimeout(() => {
 
-      first.classList.remove("flipped");
-      second.classList.remove("flipped");
+      first.classList.remove(
+        "flipped"
+      );
+
+      second.classList.remove(
+        "flipped"
+      );
 
       memoryFlipped = [];
 
@@ -1550,22 +2605,30 @@ function startTargetGame() {
     return;
   }
 
+
   targetRunning = true;
 
   targetScore = 0;
+
   targetTime = 20;
+
   targetCombo = 0;
 
 
   updateTargetStats();
 
+
   document
-    .getElementById("targetStartButton")
+    .getElementById(
+      "targetStartButton"
+    )
     .disabled = true;
 
 
   document
-    .getElementById("targetMessage")
+    .getElementById(
+      "targetMessage"
+    )
     .textContent =
     "GO GO GO! ⚡";
 
@@ -1580,21 +2643,41 @@ function startTargetGame() {
 
       updateTargetStats();
 
-      if (targetTime <= 0) {
+
+      if (
+        targetTime <= 0
+      ) {
 
         stopTargetGame();
 
+
         document
-          .getElementById("targetMessage")
+          .getElementById(
+            "targetMessage"
+          )
           .textContent =
           "TIME! Final score: " +
           targetScore +
           " ⚽";
 
-        if (targetScore >= 8) {
+
+        if (
+          targetScore >= 8
+        ) {
+
+          document
+            .getElementById(
+              "targetMessage"
+            )
+            .textContent +=
+            " AMAZING! 🔥";
+
 
           setTimeout(
-            beatGame,
+            () =>
+              beatGame(
+                "target"
+              ),
             700
           );
 
@@ -1603,9 +2686,11 @@ function startTargetGame() {
         else {
 
           document
-            .getElementById("targetMessage")
+            .getElementById(
+              "targetMessage"
+            )
             .textContent +=
-            " Get 8+ next time to unlock the trophy! 🔥";
+            " Get 8+ next time! 🔥";
 
         }
 
@@ -1620,21 +2705,28 @@ function stopTargetGame() {
 
   targetRunning = false;
 
+
   if (targetTimer) {
 
-    clearInterval(targetTimer);
+    clearInterval(
+      targetTimer
+    );
 
     targetTimer = null;
 
   }
+
 
   const button =
     document.getElementById(
       "targetStartButton"
     );
 
+
   if (button) {
+
     button.disabled = false;
+
   }
 
 }
@@ -1643,17 +2735,25 @@ function stopTargetGame() {
 function updateTargetStats() {
 
   document
-    .getElementById("targetScore")
+    .getElementById(
+      "targetScore"
+    )
     .textContent =
     targetScore;
 
+
   document
-    .getElementById("targetTime")
+    .getElementById(
+      "targetTime"
+    )
     .textContent =
     targetTime;
 
+
   document
-    .getElementById("targetCombo")
+    .getElementById(
+      "targetCombo"
+    )
     .textContent =
     targetCombo;
 
@@ -1667,6 +2767,7 @@ function moveTarget() {
       "targetArea"
     );
 
+
   const ball =
     document.getElementById(
       "targetBall"
@@ -1675,6 +2776,7 @@ function moveTarget() {
 
   const maxX =
     area.clientWidth - 80;
+
 
   const maxY =
     area.clientHeight - 80;
@@ -1685,6 +2787,7 @@ function moveTarget() {
       5,
       Math.random() * maxX
     ) + "px";
+
 
   ball.style.top =
     Math.max(
@@ -1706,17 +2809,24 @@ function hitTarget() {
 
   targetCombo++;
 
+
   sound("good");
 
+
   updateTargetStats();
+
 
   moveTarget();
 
 
-  if (targetCombo >= 5) {
+  if (
+    targetCombo >= 5
+  ) {
 
     document
-      .getElementById("targetMessage")
+      .getElementById(
+        "targetMessage"
+      )
       .textContent =
       "🔥 ON FIRE! COMBO x" +
       targetCombo;
@@ -1726,10 +2836,11 @@ function hitTarget() {
   else {
 
     document
-      .getElementById("targetMessage")
+      .getElementById(
+        "targetMessage"
+      )
       .textContent =
-      "GOAL! ⚽ +" +
-      "1";
+      "GOAL! ⚽ +1";
 
   }
 
@@ -1744,19 +2855,26 @@ function setTTTMode(mode) {
 
   tttMode = mode;
 
+
   document
-    .getElementById("twoPlayerButton")
+    .getElementById(
+      "twoPlayerButton"
+    )
     .classList.toggle(
       "active",
       mode === "2p"
     );
 
+
   document
-    .getElementById("aiButton")
+    .getElementById(
+      "aiButton"
+    )
     .classList.toggle(
       "active",
       mode === "ai"
     );
+
 
   resetTTT();
 
@@ -1773,13 +2891,14 @@ function resetTTT() {
     "",
     "",
     "",
-    "",
     ""
   ];
+
 
   tttCurrent = "⚽";
 
   tttGameOver = false;
+
 
   renderTTT();
 
@@ -1793,6 +2912,7 @@ function renderTTT() {
       "tttBoard"
     );
 
+
   board.innerHTML = "";
 
 
@@ -1800,30 +2920,45 @@ function renderTTT() {
     (value, index) => {
 
       const cell =
-        document.createElement("button");
+        document.createElement(
+          "button"
+        );
+
 
       cell.className =
         "ttt-cell";
 
+
       cell.textContent =
         value;
 
-      cell.onclick =
-        () => tttMove(index);
 
-      board.appendChild(cell);
+      cell.onclick =
+        () =>
+          tttMove(index);
+
+
+      board.appendChild(
+        cell
+      );
 
     }
   );
 
 
   document
-    .getElementById("tttTurn")
+    .getElementById(
+      "tttTurn"
+    )
     .textContent =
-    tttCurrent + " TURN";
+    tttCurrent +
+    " TURN";
+
 
   document
-    .getElementById("tttMessage")
+    .getElementById(
+      "tttMessage"
+    )
     .textContent =
     tttCurrent +
     "'s turn";
@@ -1837,20 +2972,28 @@ function tttMove(index) {
     tttGameOver ||
     tttBoard[index] !== ""
   ) {
+
     return;
+
   }
 
 
   tttBoard[index] =
     tttCurrent;
 
+
   sound("normal");
+
 
   renderTTT();
 
 
-  if (checkTTTResult()) {
+  if (
+    checkTTTResult()
+  ) {
+
     return;
+
   }
 
 
@@ -1895,7 +3038,8 @@ function aiMove() {
             : null
       )
       .filter(
-        value => value !== null
+        value =>
+          value !== null
       );
 
 
@@ -1904,21 +3048,21 @@ function aiMove() {
   }
 
 
-  /* Try to win */
-
   let move =
-    findWinningMove("🏆");
+    findWinningMove(
+      "🏆"
+    );
 
-
-  /* Try to block */
 
   if (move === -1) {
+
     move =
-      findWinningMove("⚽");
+      findWinningMove(
+        "⚽"
+      );
+
   }
 
-
-  /* Otherwise random */
 
   if (move === -1) {
 
@@ -1936,54 +3080,77 @@ function aiMove() {
   tttBoard[move] =
     "🏆";
 
+
   sound("normal");
+
 
   renderTTT();
 
 
-  if (checkTTTResult()) {
+  if (
+    checkTTTResult()
+  ) {
+
     return;
+
   }
 
 
   tttCurrent = "⚽";
+
 
   renderTTT();
 
 }
 
 
-function findWinningMove(player) {
+function findWinningMove(
+  player
+) {
 
   const wins = [
+
     [0,1,2],
+
     [3,4,5],
+
     [6,7,8],
+
     [0,3,6],
+
     [1,4,7],
+
     [2,5,8],
+
     [0,4,8],
+
     [2,4,6]
+
   ];
 
 
-  for (const line of wins) {
+  for (
+    const line of wins
+  ) {
 
     const values =
       line.map(
-        i => tttBoard[i]
+        i =>
+          tttBoard[i]
       );
 
 
     const playerCount =
       values.filter(
-        v => v === player
+        v =>
+          v === player
       ).length;
 
 
     const empty =
       line.find(
-        i => tttBoard[i] === ""
+        i =>
+          tttBoard[i] === ""
       );
 
 
@@ -2007,18 +3174,29 @@ function findWinningMove(player) {
 function checkTTTResult() {
 
   const wins = [
+
     [0,1,2],
+
     [3,4,5],
+
     [6,7,8],
+
     [0,3,6],
+
     [1,4,7],
+
     [2,5,8],
+
     [0,4,8],
+
     [2,4,6]
+
   ];
 
 
-  for (const line of wins) {
+  for (
+    const line of wins
+  ) {
 
     const [
       a,
@@ -2029,29 +3207,44 @@ function checkTTTResult() {
 
     if (
       tttBoard[a] &&
-      tttBoard[a] === tttBoard[b] &&
-      tttBoard[a] === tttBoard[c]
+      tttBoard[a] ===
+      tttBoard[b] &&
+      tttBoard[a] ===
+      tttBoard[c]
     ) {
 
       const winner =
         tttBoard[a];
 
+
       tttGameOver = true;
 
+
       document
-        .getElementById("tttMessage")
+        .getElementById(
+          "tttMessage"
+        )
         .textContent =
         winner +
         " WINS! 🏆🔥";
 
+
       sound("good");
 
-      /* Any win unlocks birthday reward */
+
+      /*
+        Only a TTT win counts.
+        A draw does not complete the game.
+      */
 
       setTimeout(
-        beatGame,
+        () =>
+          beatGame(
+            "ttt"
+          ),
         600
       );
+
 
       return true;
 
@@ -2062,16 +3255,21 @@ function checkTTTResult() {
 
   if (
     tttBoard.every(
-      cell => cell !== ""
+      cell =>
+        cell !== ""
     )
   ) {
 
     tttGameOver = true;
 
+
     document
-      .getElementById("tttMessage")
+      .getElementById(
+        "tttMessage"
+      )
       .textContent =
       "DRAW! 🤝 Play again!";
+
 
     return true;
 
